@@ -1,0 +1,38 @@
+/**********应用程序css*************/
+/**********要覆盖的样式*************/
+body{
+	font:12px/1.5 Tahoma,Helvetica,Arial,'Microsoft YaHei',sans-serif;
+}
+
+/*********** 登录页面****************/
+.login-layout{
+	background-color:#ffffff
+}
+.login-layout .widget-box .widget-body .toolbar>div>a {
+	text-shadow: none;
+}
+.login-layout .widget-box{
+	padding: 0px;
+}
+/***************分页样式*******************/
+.pagination{
+	margin:0px;
+	float:right;
+}
+.summary{
+	line-height: 30px;
+	margin-right: 10px;
+	display: block;
+	float: right;
+}
+/****************搜索表单*************************/
+.search ul.form-search{
+	list-style: none;
+	margin: 0px;
+	padding:0px
+}
+.search ul.form-search li{
+	width: 30%;
+	float:left;
+	margin-left: 5px;
+}

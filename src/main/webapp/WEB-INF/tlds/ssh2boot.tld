@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+  <description><![CDATA["Bootstrap Theme 分页"]]></description>
+  <display-name>"Struts2 Bootstrap pagination Tags"</display-name>
+  <tlib-version>2.2</tlib-version>
+  <short-name>ssh</short-name>
+  <uri>/ssh-boot-tags</uri>
+  <tag>
+    <description><![CDATA[Render pagination div]]></description>
+    <name>pagination</name>
+    <tag-class>com.zwl.web.views.jsp.tags.PaginationTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description><![CDATA[page对象]]></description>
+      <name>pageBean</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <dynamic-attributes>false</dynamic-attributes>
+  </tag>
+</taglib>

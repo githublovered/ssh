@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.convention.action.packages" value="com.zwl.web.action" />
+	<constant name="struts.convention.result.path" value="/WEB-INF/views/" />
+	<!-- 主题 -->
+	<constant name="struts.ui.theme" value="bootstrap" />
+	
+	<!-- 所有需要登录后再访问的action所在的package都必须继承这个包 -->
+	<package name="ssh-default" extends="convention-default,json-default">
+		<interceptors>
+			<interceptor name="auth" class="com.zwl.web.interceptor.AuthenticationInterceptor"></interceptor>
+			<interceptor-stack name="auth-default">
+				<interceptor-ref name="auth"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="auth-default"></default-interceptor-ref>
+		<default-action-ref name="index"/>
+		
+		<!-- 全局result，跳转到登录页面 -->
+		<global-results>
+			<result name="signin" type="redirect">/signin</result>
+		</global-results>
+		
+		<!-- 默认的action，当找不到action的时候，会访问/index.jsp而这个/index.jsp会自动跳转到 home页 -->
+		<action name="index">
+			<result name="success">/index.jsp</result>
+		</action>	
+	</package>
+</struts>
